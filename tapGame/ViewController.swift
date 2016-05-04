@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeColorButton: UIButton!
     @IBOutlet weak var counterOutlet: UILabel!
     
+    var prevR: CGFloat = 0
+    var prevG: CGFloat = 0
+    var prevB: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,8 +33,7 @@ class ViewController: UIViewController {
         
         //Log to console
         print("The user has pressed the button")
-        
-        
+                
         //Change the color to a random UIColor
         primaryViewOutlet.backgroundColor = randomBackgroundColor()
         
@@ -82,8 +85,56 @@ class ViewController: UIViewController {
         colorString += String(" )")
         
         print(colorString);
+        
+        //Save for previous color
+        prevR = r
+        prevG = g
+        prevB = b
+        
         //Set the background
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    }
+    
+    //Method for changing to the previous color
+    //if the user clicks anywhere besides the button
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch!.locationInView(self.view)
+        
+        //Log to console
+        print("User has touched the background")
+        
+        if touchLocation.y >= changeColorButton.frame.origin.y
+        {
+            //Log to console
+            print("User's touch is within the button")
+            //do nothing
+            return
+        }
+        else
+        {
+            //Log to console
+            print("Setting background color to previous color\n")
+            //Log to console
+            var colorString = String("The previous color is: (");
+            colorString += String(prevR);
+            colorString += String(" , ")
+            colorString += String(prevG)
+            colorString += String(" , ")
+            colorString += String(prevB)
+            colorString += String(" )")
+            
+            print(colorString);
+            
+            //Change background to previous color
+            /*
+                This currently does not function properly.
+                Values appear to be set properly, but the color change does not take effect
+             
+                Will need to look into this further
+            */
+            primaryViewOutlet.backgroundColor = UIColor(red: prevR, green: prevG, blue: prevB, alpha: 1.0)
+        }
     }
     
    
