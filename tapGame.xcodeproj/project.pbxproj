@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7589063E1CDA5E0500B84AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589063D1CDA5E0500B84AAA /* AppDelegate.swift */; };
-		758906401CDA5E0500B84AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589063F1CDA5E0500B84AAA /* ViewController.swift */; };
-		758906431CDA5E0500B84AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758906411CDA5E0500B84AAA /* Main.storyboard */; };
 		758906451CDA5E0500B84AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758906441CDA5E0500B84AAA /* Assets.xcassets */; };
 		758906481CDA5E0500B84AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758906461CDA5E0500B84AAA /* LaunchScreen.storyboard */; };
 		758906531CDA5E0500B84AAA /* tapGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758906521CDA5E0500B84AAA /* tapGameTests.swift */; };
 		7589065E1CDA5E0500B84AAA /* tapGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589065D1CDA5E0500B84AAA /* tapGameUITests.swift */; };
+		758906711CDA882D00B84AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7589066F1CDA882D00B84AAA /* Main.storyboard */; };
+		758906731CDA899200B84AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758906721CDA899200B84AAA /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		7589063A1CDA5E0500B84AAA /* tapGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tapGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7589063D1CDA5E0500B84AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7589063F1CDA5E0500B84AAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		758906421CDA5E0500B84AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		758906441CDA5E0500B84AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		758906471CDA5E0500B84AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758906491CDA5E0500B84AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		758906591CDA5E0500B84AAA /* tapGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tapGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7589065D1CDA5E0500B84AAA /* tapGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tapGameUITests.swift; sourceTree = "<group>"; };
 		7589065F1CDA5E0500B84AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		758906701CDA882D00B84AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		758906721CDA899200B84AAA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				7589063D1CDA5E0500B84AAA /* AppDelegate.swift */,
-				7589063F1CDA5E0500B84AAA /* ViewController.swift */,
-				758906411CDA5E0500B84AAA /* Main.storyboard */,
+				7589066F1CDA882D00B84AAA /* Main.storyboard */,
+				758906721CDA899200B84AAA /* ViewController.swift */,
 				758906441CDA5E0500B84AAA /* Assets.xcassets */,
 				758906461CDA5E0500B84AAA /* LaunchScreen.storyboard */,
 				758906491CDA5E0500B84AAA /* Info.plist */,
@@ -229,9 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758906711CDA882D00B84AAA /* Main.storyboard in Resources */,
 				758906481CDA5E0500B84AAA /* LaunchScreen.storyboard in Resources */,
 				758906451CDA5E0500B84AAA /* Assets.xcassets in Resources */,
-				758906431CDA5E0500B84AAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758906401CDA5E0500B84AAA /* ViewController.swift in Sources */,
+				758906731CDA899200B84AAA /* ViewController.swift in Sources */,
 				7589063E1CDA5E0500B84AAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,20 +293,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		758906411CDA5E0500B84AAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				758906421CDA5E0500B84AAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		758906461CDA5E0500B84AAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				758906471CDA5E0500B84AAA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7589066F1CDA882D00B84AAA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				758906701CDA882D00B84AAA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -484,6 +484,7 @@
 				758906641CDA5E0500B84AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		758906651CDA5E0500B84AAA /* Build configuration list for PBXNativeTarget "tapGameTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +493,7 @@
 				758906671CDA5E0500B84AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		758906681CDA5E0500B84AAA /* Build configuration list for PBXNativeTarget "tapGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +502,7 @@
 				7589066A1CDA5E0500B84AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
