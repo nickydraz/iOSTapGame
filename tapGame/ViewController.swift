@@ -14,9 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeColorButton: UIButton!
     @IBOutlet weak var counterOutlet: UILabel!
     
-    var prevR: CGFloat = 0
-    var prevG: CGFloat = 0
-    var prevB: CGFloat = 0
+    var counter: Int = 0
+    var colorCounter: Int = 0
+    var fakeCounter: Int = 0
+    
+    //Previous colors variables
+    var prevR = [CGFloat](count: 100, repeatedValue: 0.0)
+    var prevG = [CGFloat](count: 100, repeatedValue: 0.0)
+    var prevB = [CGFloat](count: 100, repeatedValue: 0.0)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +43,10 @@ class ViewController: UIViewController {
         //Change the color to a random UIColor
         primaryViewOutlet.backgroundColor = randomBackgroundColor()
         
-        //Update the counter
-        var counter:Int = Int(counterOutlet.text ?? "0")!
+        //Update the counters
         counter += 1
+        colorCounter = 0
+        fakeCounter = counter
         
         print("Counter is: " + String(counter))
         
@@ -87,9 +94,9 @@ class ViewController: UIViewController {
         print(colorString);
         
         //Save for previous color
-        prevR = r
-        prevG = g
-        prevB = b
+        prevR[counter] = r
+        prevG[counter] = g
+        prevB[counter] = b
         
         //Set the background
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
@@ -111,29 +118,49 @@ class ViewController: UIViewController {
             //do nothing
             return
         }
+        else if counter == 0 || fakeCounter == 0
+        {
+            //Log to console
+            print("Counter is zero, doing nothing")
+            //do nothing
+            return
+        }
+        else if (fakeCounter - 1) - (colorCounter + 1) < 0
+        {
+            //Log to console
+            print("Previous color index would be out of range")
+            //do nothing
+            return
+        }
         else
         {
+            //Update the counters
+            colorCounter += 1
+            fakeCounter -= 1
+            
             //Log to console
             print("Setting background color to previous color\n")
             //Log to console
             var colorString = String("The previous color is: (");
-            colorString += String(prevR);
+            colorString += String(prevR[fakeCounter - colorCounter]);
             colorString += String(" , ")
-            colorString += String(prevG)
+            colorString += String(prevG[fakeCounter - colorCounter])
             colorString += String(" , ")
-            colorString += String(prevB)
+            colorString += String(prevB[fakeCounter - colorCounter])
             colorString += String(" )")
             
             print(colorString);
             
+            print("Changing to color at index: " + String(fakeCounter - colorCounter))
+            
             //Change background to previous color
             /*
-                This currently does not function properly.
-                Values appear to be set properly, but the color change does not take effect
-             
-                Will need to look into this further
-            */
-            primaryViewOutlet.backgroundColor = UIColor(red: prevR, green: prevG, blue: prevB, alpha: 1.0)
+             Still not functioning properly. 
+             the if out of range check above breaks it,
+             not allowing some of the colors to be retrieved.
+             Closer, but still not fully done yet.
+             */
+            primaryViewOutlet.backgroundColor = UIColor(red: prevR[fakeCounter - colorCounter], green: prevG[fakeCounter - colorCounter], blue: prevB[fakeCounter - colorCounter], alpha: 1.0)
         }
     }
     
