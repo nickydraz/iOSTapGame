@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     var fakeCounter: Int = 0
     
     //Previous colors variables
-    var prevR = [CGFloat](count: 100, repeatedValue: 0.0)
-    var prevG = [CGFloat](count: 100, repeatedValue: 0.0)
-    var prevB = [CGFloat](count: 100, repeatedValue: 0.0)
+    var prevR = [CGFloat]()
+    var prevG = [CGFloat]()
+    var prevB = [CGFloat]()
     
     
     override func viewDidLoad() {
@@ -94,9 +94,9 @@ class ViewController: UIViewController {
         print(colorString);
         
         //Save for previous color
-        prevR[counter] = r
-        prevG[counter] = g
-        prevB[counter] = b
+        prevR.append(r)
+        prevG.append(g)
+        prevB.append(b)
         
         //Set the background
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
